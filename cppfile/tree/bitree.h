@@ -5,8 +5,8 @@
 #define MAX_SIZE    100
 struct biNode
 {
-    char data;
-    biNode* left;
-    biNode* right;
+	char data;
+	biNode* left;
+	biNode* right;
 };
 #endif
