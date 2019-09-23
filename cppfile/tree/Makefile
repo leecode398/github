@@ -1,5 +1,5 @@
-CXX = g++
-LDFLAGS =  bitree.cpp stack.cpp
+CXX = clang++
+LDFLAGS =  bitree.cpp
 
 SRC = 
 OBJ = $(SRC:.cc=.o)
