@@ -18,6 +18,7 @@ func SliceInt_Sum(s SliceInt) int {
 	}
 	return sum
 }
+
 type T struct{
 	a int
 }
