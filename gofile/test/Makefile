@@ -14,4 +14,4 @@ clean:
 	$(GOCLEAN)
 	rm -f $(BINARY_NAME)
 run:
-	$(GORUN) .
+	$(GORUN) tongbu.go
