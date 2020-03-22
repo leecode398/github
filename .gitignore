@@ -51,6 +51,15 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
-*.DS_Store
+.DS_Store
 
 gofile/src/test
+/mproxy
+/ngnix
+/ngx_http_proxy_connect_module
+/proxychains-ng
+/proxy
+/proxy2
+/simple-web-proxy
+/ProxyClient
+/HTTPProxy
