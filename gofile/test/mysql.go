@@ -7,70 +7,29 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 )
 
-func mysql() {
-	db, err := sql.Open("mysql", "root:lx000000@/test?charset=utf8")
-	checkErr(err)
-
-	// insert
-	stmt, err := db.Prepare("INSERT user_info SET id=?,name=?")
-	checkErr(err)
-
-	res, err := stmt.Exec(9, "qq")
-	checkErr(err)
-
-	// update
-	stmt, err = db.Prepare("update user_info set name=? where id=?")
-	checkErr(err)
-
-	res, err = stmt.Exec("wangshubo_qeuqpdate", 3)
-	checkErr(err)
-
-	affect, err := res.RowsAffected()
-	checkErr(err)
-
-	fmt.Println(affect)
-
-	// query
-	rows, err := db.Query("SELECT * FROM user_info")
-	checkErr(err)
-
-	for rows.Next() {
-		var uid int
-		var username string
-
-		err = rows.Scan(&uid, &username)
-		checkErr(err)
-		fmt.Println(uid)
-		fmt.Println(username)
-	}
-
-	// delete
-	stmt, err = db.Prepare("delete from user_info where id=?")
-	checkErr(err)
-
-	res, err = stmt.Exec(2)
-	checkErr(err)
-
-	// query
-	rows, err = db.Query("SELECT * FROM user_info")
-	checkErr(err)
-
-	for rows.Next() {
-		var uid int
-		var username string
-
-		err = rows.Scan(&uid, &username)
-		checkErr(err)
-		fmt.Println(uid)
-		fmt.Println(username)
-	}
-
-	db.Close()
-
-}
-
-func checkErr(err error) {
+func main() {
+	db, err := sql.Open("mysql", "root:li000000@tcp(127.0.0.1:3306)/WebTest?charset=utf8")
 	if err != nil {
-		panic(err)
+		panic(err.Error())
+	}
+	defer db.Close()
+
+	err = db.Ping()
+	if err != nil {
+		panic(err.Error())
+	}
+
+	rows, err := db.Query("select * from user_info")
+	defer rows.Close()
+	for rows.Next() {
+		var id int
+		var name string
+		var password string
+		err = rows.Scan(&id, &name, &password)
+		fmt.Printf("rows id = %d, value = %s, password:%s\n", id, name, password)
+	}
+	err = rows.Err()
+	if err != nil {
+		panic(err.Error())
 	}
 }

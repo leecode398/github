@@ -4,29 +4,22 @@ import (
 	"fmt"
 )
 
-func findContinuousSequence(target int) [][]int {
-    a := [][]int{}
-    row := 0
-    for left, right := 1, 2
-	sum := left + right
-    for right < target/2+1 {
-        col := 0
-        if sum == target {
-            for i := left; i <= right; i++ {
-                a[row][col] = i
-                col++
-            }
-        } else if sum < terget {
-            right++
-        } else {
-            left++
-        }
-        row++
-    }
-    return a
-}
-
 func main() {
-	target := 15
-	fmt.Printf("%v\n",findContinuousSequence(target))
+	a := []int{1, 2, 3, 4, 5}
+	b := []int{6, 7, 8, 9, 0}
+
+	for m := range b {
+		fmt.Print(m)
+	}
+
+	for _, v := range a {
+		fmt.Print(v, " ")
+		for _, m := range b {
+			fmt.Print(m, " ")
+			if m == 7 {
+				break
+			}
+		}
+		fmt.Println("")
+	}
 }

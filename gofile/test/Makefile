@@ -14,4 +14,14 @@ clean:
 	$(GOCLEAN)
 	rm -f $(BINARY_NAME)
 run:
-	$(GORUN) tongbu.go
+	$(GORUN) sock.go
+sock:
+	$(GORUN) sock.go
+client:
+	$(GORUN) client.go
+sql:
+	$(GORUN) mysql.go
+ref:
+	$(GORUN) reflect.go
+
+
