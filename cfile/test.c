@@ -1,11 +1,9 @@
 #include <stdio.h>
-#include <string.h>
-int main()
-{
-	int a[5] = {1,2,3,4,5};
-	for(int i : a)
-	{
-		printf("%d\t",i);
-	}
-	return 0;
+#include <limits.h>
+int main(int argc, const char * argv[]) {
+	// insert code here...
+	unsigned char x;
+	x = 128 + 130;
+	printf("%d\n",UCHAR_MAX);
+	printf("%d\n",x);  
 }
