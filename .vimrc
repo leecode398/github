@@ -80,14 +80,14 @@ Plug 'vim-airline/vim-airline'
 Plug 'ianva/vim-youdao-translater'
 
 " 代码自动完成，安装完插件还需要额外配置才可以使用
-Plug 'Valloric/YouCompleteMe'
+"Plug 'Valloric/YouCompleteMe'
 
 " 可以在文档中显示 git 信息
 Plug 'airblade/vim-gitgutter'
 
 
 " 下面两个插件要配合使用，可以自动生成代码块
-Plug 'SirVer/ultisnips'
+"Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 " 配色方案
